@@ -38,6 +38,9 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS_MPN_1 }}
     
+    - run: |
+        az account show
+    
     # Deploy to Azure Web apps
     #- name: 'Run Azure webapp deploy action using publish profile credentials'
       #uses: azure/webapps-deploy@v2
