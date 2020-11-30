@@ -38,6 +38,18 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS_MPN_1 }}
     
+    # Deploy to Azure Web apps
+    #- name: 'Run Azure webapp deploy action using publish profile credentials'
+      #uses: azure/webapps-deploy@v2
+      #with: 
+        #app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
+        #package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+
+    - name: logout
+      run: |
+        az logout
+    
+    
     # - name: Deploy to Azure 
     #   uses: azure/webapps-deploy@v2
     #   with:
